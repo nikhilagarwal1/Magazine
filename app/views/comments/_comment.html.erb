@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+  <tr class="active">
+  	<th width="20%">Commenter</th>
+  	<td width="50%"><%= comment.commenter%></td>
+  </tr>
+  <tr class="active">
+  	<th>Comment:</th>
+  	<td><%= comment.body%></td>
+  </tr>
+</table>
+<p>
+	<%= link_to 'Add a Reply', new_comment_comment_path(comment), class: "btn btn-primary btn-sm"%>
+  <%= link_to "Delete", article_comment_path(comment.commentable, comment), class: "btn btn-danger btn-sm", :method => :delete, data: { confirm: 'Only comments without replies can be deleted' }%>
+</p>
+<p>
+	<div class="comment"> <%= render :partial => 'comments/comment', :collection => comment.comments %></div>
+</p>

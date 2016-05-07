@@ -1,0 +1,14 @@
+<h2>Add a Reply:</h2>
+<%= form_for([@parent, @comment = Comment.new]) do |f| %>
+  <p>
+    <%= f.label :commenter, class: "col-sm-2 control-label"%><br>
+    <%= f.text_field :commenter, class: "form-control", placeholder: "Commenter"%>
+  </p>
+  <p>
+    <%= f.label :body, class: "col-sm-2 control-label"%><br>
+    <%= f.text_area :body, class: "form-control", placeholder: "Body"%>
+  </p>
+  <p>
+    <%= f.submit class: "btn btn-success btn-sm" %>
+  </p>
+<% end %>

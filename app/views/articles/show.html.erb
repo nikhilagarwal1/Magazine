@@ -1,0 +1,23 @@
+<h1>Article</h1>
+<p></p>
+<table class="table table-hover">
+  <tr class="info">
+  	<th>Title</th>
+  	<td><%= @article.title %></td>
+  </tr>
+  <tr class="active">
+  	<th>Body</th>
+  	<td><%= @article.body %></td>
+  </tr>
+  <tr class="warning">
+  	<th>Author</th>
+  	<td><%= @article.author %></td>
+  </tr>
+</table>
+<%= link_to 'Edit Article', edit_article_path(@article), class: "btn btn-info btn-sm"%>	
+<%= link_to 'Back', articles_path, class: "btn btn-success btn-sm"%>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<ul class="comment_list">
+  <%= render :partial => 'comments/comment', :collection => @article.comments %>
+</ul>
