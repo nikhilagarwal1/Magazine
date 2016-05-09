@@ -5,8 +5,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    p "$$$$$$$$$$4"
-    p params
     @article = Article.find(params[:id])
   end
 
